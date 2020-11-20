@@ -4,22 +4,23 @@ public class Main {
 
     static void czyZdanieJestPlandonimem(String x)
     {
+        String nazwa = x.toLowerCase();
         boolean isPl = false;
-        for(int i = 0; i < x.length();i++)
+        int j = nazwa.length() -1;
+        for(int i = 0; i < nazwa.length();i++)
         {
-            for (int j =x.length(); j >0; j--)
-            {
-                if(x[i] == x[j])
-                    isPl = true;
-                else
-                {
-                    isPl = false;
-                    break;
-                }
 
+            if(nazwa.charAt(i) == nazwa.charAt(j))
+                isPl = true;
+            else
+            {
+                isPl = false;
+                break;
             }
+
             if(!isPl)
                 break;
+            j--;
         }
     }
 
@@ -27,7 +28,7 @@ public class Main {
 
 	String nazwa =  "Ala";
 
-
+        czyZdanieJestPlandonimem(nazwa);
 
     }
 }
